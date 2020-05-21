@@ -1,0 +1,13 @@
+<div class="col-md-12">
+    <div class="row">
+      <div class="col-md-10">
+        <input type="text" #searchInput
+        (keyup.enter)="searchBook(searchInput.value)" 
+        class="form-control" placeholder="Search" width="200px">
+      </div>
+    
+    <div class="col-md-2">
+      <button type="submit" (click)="searchBook(searchInput.value)" class="btn btn-primary" >Seacrh</button>
+    </div>
+    </div>
+  </div>
