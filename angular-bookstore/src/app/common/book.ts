@@ -1,5 +1,5 @@
 export class Book {
-
+    id: string;
     sku: string;
     name: string;
     description: string;
@@ -9,4 +9,5 @@ export class Book {
     unitsInStock: number;
     createdOn: Date;
     updatedOn: Date;
+    
 }

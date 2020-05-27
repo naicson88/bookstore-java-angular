@@ -15,6 +15,9 @@ export class BookListComponent implements OnInit {
   books : Book[];
   currentCategoryId: number;
   searchMode: boolean;
+  //pageOfItens: Array<Book>;
+  p : number =  1;
+ 
 
   constructor(private _bookService: BookService,
     private _activeRoute: ActivatedRoute) { }
@@ -26,6 +29,10 @@ export class BookListComponent implements OnInit {
     })
 
   }
+
+  /*pageClick(pageOfItens: Array<Book>){
+    this.pageOfItens = pageOfItens
+  }*/
 
   listBooks(){
 
@@ -62,9 +69,16 @@ export class BookListComponent implements OnInit {
 
     this._bookService.searchBooks(keyword).subscribe(
       data => {
-        console.log(data);
-
+        this.books = data;
       }
     )
+  }
+
+  updatePageSize(pageSize: number){
+    this.updatePageSize
+  }
+
+  addToCart(book: Book){
+    console.log(`book name: ${book.name}, price: ${book.unitPrice}`)
   }
 }
